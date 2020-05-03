@@ -29,6 +29,13 @@ agent any
 			}
 			}
 		}
+		stage ('test'){
+			steps{
+			withMaven(jdk: 'localjdk', maven: 'localmaven') {
+				sh 'mvn package'
+			}
+			}
+		}
    
 }
 }
