@@ -29,7 +29,7 @@ agent any
 			}
 			}
 		}
-		stage ('test'){
+		stage ('package'){
 			steps{
 			withMaven(jdk: 'localjdk', maven: 'localmaven') {
 				sh 'mvn package'
