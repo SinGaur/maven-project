@@ -4,7 +4,7 @@ agent any
 stages
 {
 
-stage ("please clone src")
+stage ("scm checkout")
 {
 steps
 {
