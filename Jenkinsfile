@@ -8,7 +8,8 @@ agent any
 
 			steps{
 
-					git branch: 'master', url: 'https://github.com/SinGaur/maven-project' }
+					git branch: 'master', url: 'https://github.com/SinGaur/maven-project' 
+					}
 
 
 }
@@ -16,9 +17,11 @@ agent any
 
 			steps{
 
-					withMaven(jdk: 'localjdk', maven: 'localmaven') 
-					sh 'mvn compile' }
+					withMaven(jdk: 'localjdk', maven: 'localmaven') {
+					sh 'mvn compile' 
+					}
+					}
    }
-   }
+}
    
-   }
+}
