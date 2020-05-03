@@ -16,6 +16,6 @@ stage ('compile source code')
 {
 steps{
 withMaven(jdk: 'localjdk', maven: 'localmaven') 
-    
+    sh 'mvn compile'
 }
 }}}}
