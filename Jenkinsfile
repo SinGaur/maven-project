@@ -9,10 +9,10 @@ agent any
 			steps{
 
 					git branch: 'master', url: 'https://github.com/SinGaur/maven-project' 
-					}
+				}
 
 
-}
+		}
 		stage ('compile source code'){
 
 			steps{
@@ -20,8 +20,15 @@ agent any
 					withMaven(jdk: 'localjdk', maven: 'localmaven') {
 					sh 'mvn compile' 
 					}
-					}
-   }
-}
+				}
+		}
+		stage ('test'){
+			steps{
+			withMaven(jdk: 'localjdk', maven: 'localmaven') {
+				sh 'mvn test'
+			}
+			}
+		}
    
+}
 }
