@@ -10,7 +10,7 @@ agent any
 		}
 		stage ('build using sonar'){
 			steps{
-					withSonarQubeEnv('sonarjenkinsintegration') {
+					withSonarQubeEnv('sonar') {
 					withMaven(jdk: 'localjdk', maven: 'localmaven') {
 					sh 'mvn clean sonar:sonar package'
 						}
